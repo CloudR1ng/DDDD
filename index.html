@@ -27,7 +27,7 @@
         }
          .nav-item {
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, z-index 0.3s ease;
             position: relative;
             overflow: hidden;
             height: 300px; /* 카드 높이 설정 */
@@ -43,6 +43,7 @@
         }
         .nav-item:hover {
             transform: scale(1.05);
+            z-index: 10;
         }
 
         @media (max-width: 768px) {
