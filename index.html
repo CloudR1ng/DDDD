@@ -247,6 +247,19 @@
     <!-- 메인 콘텐츠 끝 -->
 
     <script>
+
+     function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        document.getElementById('menuButton').addEventListener('click', function () {
+            showPage('homePage');
+        });
+
         // 관광지 정보를 저장
         const touristData = {
             'akihabara': {
