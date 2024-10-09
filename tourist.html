@@ -35,6 +35,41 @@
             height: 100%;
             object-fit: cover;
         }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #4a4a4a;
+            position: relative;
+            flex-wrap: nowrap;
+            overflow: hidden;
+        }
+        .header-logo {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+        }
+        .header-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .header-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+            white-space: nowrap;
+        }
+        #menuButton {
+            flex: 0 0 auto;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        #menuButton img {
+            height: 36px;
+            width: auto;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -53,6 +88,7 @@
             </button>
         </nav>
     </header>
+
     <!-- 관광지 그리드 페이지 -->
     <main class="main-content mt-16">
         <div class="grid-container">
@@ -85,10 +121,10 @@
     </main>
 
     <script>
-        // 홈 페이지로 이동하는 함수
-        function goToHomePage() {
+        // 메뉴 버튼 클릭 시 홈 페이지로 이동하는 함수
+        document.getElementById('menuButton').addEventListener('click', function () {
             window.location.href = 'index.html';
-        }
+        });
     </script>
 </body>
 </html>
