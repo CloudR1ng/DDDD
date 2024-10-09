@@ -29,14 +29,14 @@
             cursor: pointer;
             transition: transform 0.3s ease;
             position: relative;
-            height: 300px;
+            height: 300px; /* 카드 높이 설정 */
             overflow: hidden;
         }
         .nav-item img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
-            object-position: center;
+            height: 100%; /* 이미지 높이를 부모 요소에 맞춤 */
+            object-fit: cover; /* 이미지가 카드 안을 꽉 채우도록 설정 */
+            object-position: center; /* 이미지의 중심을 맞춤 */
         }
         .nav-item:hover {
             transform: scale(1.05);
