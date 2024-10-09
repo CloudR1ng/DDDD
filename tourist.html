@@ -69,6 +69,20 @@
             margin: 0 auto;
             margin-top: 60px; /* Adjust to avoid overlap with header */
         }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* 반투명한 검정색 배경 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+}
 
         .grid-item {
             position: relative;
@@ -110,7 +124,7 @@
             <!-- 각각의 관광지 그리드 아이템 -->
             <div class="grid-item" onclick="location.href='tourist_akihabara.html'">
                 <img src="AKI.jpg">
-                
+                <div class="image-overlay">아키하바라</div>
             </div>
             <div class="grid-item" onclick="location.href='tourist file/tourist_disneyland.html'">
                 <img src="DIZNI.webp">
