@@ -6,6 +6,9 @@
     <title>대전대신고 1학년 수학여행</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <style>
+        :root {
+            --logo-font-size: 2rem;
+        }
         .page {
             display: none;
             opacity: 0;
@@ -43,17 +46,43 @@
             font-weight: bold;
             text-align: center;
         }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        .header-logo img {
+            height: 48px;
+            width: auto;
+        }
+        .header-logo span {
+            font-size: var(--logo-font-size);
+            font-weight: bold;
+            color: white;
+            margin-left: 1rem;
+        }
+        .main-content {
+            margin-top: 6rem;
+            overflow-y: auto;
+            height: calc(100vh - 6rem);
+            padding: 1rem;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
     <!-- 헤더 시작 -->
     <header class="bg-blue-800 shadow-md fixed w-full z-10">
-        <nav class="container mx-auto px-6 py-3 flex justify-center items-center relative">
-            <div class="flex items-center">
-                <img src="sym_mark.png" class="h-12 w-auto">
-                <span class="font-bold text-2xl text-white ml-4">대전대신고</span>
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative header">
+            <div class="header-logo">
+                <img src="sym_mark.png">
+                <span>대전대신고</span>
             </div>
-            <button id="menuButton" class="text-white focus:outline-none absolute right-6">
+            <button id="menuButton" class="text-white focus:outline-none">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -65,18 +94,17 @@
     <!-- 헤더 끝 -->
 
     <!-- 메인 콘텐츠 시작 -->
-    <main class="pt-20 flex items-center justify-center">
+    <main class="main-content">
         <div id="homePage" class="page active">
             <h1 class="text-3xl font-bold text-center my-8">1학년 수학여행</h1>
 
-            <div
-                class="content-container px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+            <div class="content-container px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
                 <!-- 카드 아이템들 -->
                 <!-- 반 별 일정 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('schedulePage')">
                     <div class="relative">
-                        <img src="visual_02.png" alt="반 별 일정" class="w-full h-40 object-cover">
+                        <img src="visual_02.png" alt="반 별 일정" class="w-full h-56 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">반 별 일정</h2>
                         </div>
@@ -86,7 +114,7 @@
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('akihabaraPage')">
                     <div class="relative">
-                        <img src="images/akihabara.jpg" alt="아키하바라" class="w-full h-40 object-cover">
+                        <img src="images/akihabara.jpg" alt="아키하바라" class="w-full h-56 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">아키하바라</h2>
                         </div>
@@ -96,7 +124,7 @@
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('disneylandPage')">
                     <div class="relative">
-                        <img src="images/disneyland.jpg" alt="디즈니랜드" class="w-full h-40 object-cover">
+                        <img src="images/disneyland.jpg" alt="디즈니랜드" class="w-full h-56 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">디즈니랜드</h2>
                         </div>
@@ -106,7 +134,7 @@
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('cautionPage')">
                     <div class="relative">
-                        <img src="images/caution.jpg" alt="주의사항" class="w-full h-40 object-cover">
+                        <img src="images/caution.jpg" alt="주의사항" class="w-full h-56 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">주의사항</h2>
                         </div>
@@ -116,7 +144,7 @@
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('japanesePage')">
                     <div class="relative">
-                        <img src="images/japanese.jpg" alt="일본어 어휘" class="w-full h-40 object-cover">
+                        <img src="images/japanese.jpg" alt="일본어 어휘" class="w-full h-56 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">일본어 어휘</h2>
                         </div>
@@ -146,10 +174,6 @@
         }
 
         document.getElementById('menuButton').addEventListener('click', function () {
-            showPage('homePage');
-        });
-
-        document.getElementById('homeButton').addEventListener('click', function () {
             showPage('homePage');
         });
     </script>
