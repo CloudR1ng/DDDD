@@ -74,7 +74,7 @@
             margin-right: 1rem;
         }
         .header-logo img {
-            height: 36px; /* 로고 높이 줄이기 */
+            height: 36px; /* 로고 높이 */
             width: auto;
         }
         .header-title {
@@ -94,6 +94,13 @@
         }
         #menuButton {
             flex: 0 0 auto;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        #menuButton img {
+            height: 36px; /* 로고와 동일한 높이로 설정 */
+            width: auto;  /* 너비는 자동 조정 */
         }
     </style>
 </head>
@@ -106,8 +113,9 @@
                 <img src="sym_mark.png" alt="Logo">
             </div>
             <div class="header-title">
-                대전대신고등학교 1학년 수학여행
+                2024학년도 대전대신고등학교 1학년 수학여행
             </div>
+            <!-- 오른쪽 메뉴 버튼에 이미지 추가 -->
             <button id="menuButton" class="text-white focus:outline-none ml-0">
                 <img src="menu.png" alt="Menu Icon">
             </button>
