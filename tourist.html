@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="ko">
   <head>
       <meta charset="UTF-8">
@@ -126,16 +126,8 @@
       <script>
           // 메뉴 버튼 클릭 시 다른 페이지로 이동하는 함수
           document.getElementById('menuButton').addEventListener('click', function () {
-              const destinations = {
-                  'akihabara': 'tourist_akihabara.html',
-                  'disneyland': 'tourist_disneyland.html',
-                  'haneko': 'tourist_haneko.html',
-                  'hakone': 'tourist_hakone.html',
-                  'owakudani': 'tourist_owakudani.html',
-                  'sensoji': 'tourist_sensoji.html',
-                  'nakamise': 'tourist_nakamise.html',
-                  'shinsungsa': 'tourist_shinsungsa.html'
-              };
+              window.location.href = 'index.html'; // 홈 페이지로 이동
+          });;
               window.location.href = destinations['akihabara'];
           });
               window.location.href = 'tourist_akihabara.html';
