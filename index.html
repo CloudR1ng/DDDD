@@ -11,6 +11,8 @@
         }
         body {
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
         .page {
             display: none;
@@ -39,8 +41,10 @@
             transform: scale(1.05);
         }
         .content-container {
+            width: 100%;
             max-width: 800px;
             margin: 0 auto;
+            padding: 0;
         }
         .image-overlay {
             position: absolute;
@@ -90,6 +94,8 @@
             overflow-y: auto;
             height: calc(100vh - 6rem);
             padding: 1rem;
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
