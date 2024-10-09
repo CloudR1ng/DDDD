@@ -30,20 +30,16 @@
             transition: transform 0.3s ease, z-index 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 300px; /* 카드 높이 설정 */
             padding: 0; /* 패딩 제거 */
             margin: 0; /* 마진 제거 */
-            padding-bottom: 56.25%; /* 16:9 비율 유지 */
             z-index: 1;
         }
         .nav-item img {
             width: 100%;
             height: 100%; /* 이미지 높이를 부모 요소에 맞춤 */
-            position: absolute;
-            top: 0;
-            left: 0;
             object-fit: cover; /* 이미지가 카드 안을 꽉 채우도록 설정 */
             object-position: center; /* 이미지의 중심을 맞춤 */
-            display: block;
         }
         .nav-item:hover {
             transform: scale(1.05);
@@ -124,7 +120,7 @@
         }
     </style>
 </head>
-<body class="bg-transparent">
+<body class="bg-gray-100">
     <!-- 헤더 시작 -->
     <header class="fixed w-full z-10">
         <nav class="container mx-auto px-6 py-3 flex items-center header">
