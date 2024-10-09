@@ -164,6 +164,16 @@
                         </div>
                     </div>
                 </div>
+                <!-- 호텔 -->
+                <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
+                    onclick="showPage('hotelPage')">
+                    <div class="relative">
+                        <img src="HOTELBG.jpg">
+                        <div class="image-overlay">
+                            <h2 class="font-semibold text-lg">호텔</h2>
+                        </div>
+                    </div>
+                </div>
                 <!-- 주의사항 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('cautionPage')">
@@ -187,43 +197,11 @@
             </div>
         </div>
 
-        <!-- 관광지 페이지 -->
-        <div id="touristPage" class="page">
-            <div class="grid-container">
-                <!-- 각각의 관광지 그리드 아이템 -->
-                <div class="grid-item" onclick="showTouristInfo('akihabara')">
-                    <img src="images/akihabara.jpg" alt="아키하바라">
-                </div>
-                <div class="grid-item" onclick="showTouristInfo('disneyland')">
-                    <img src="images/disneyland.jpg" alt="디즈니랜드">
-                </div>
-                <div class="grid-item" onclick="showTouristInfo('haneko')">
-                    <img src="images/haneko.jpg" alt="하네코신사">
-                </div>
-                <div class="grid-item" onclick="showTouristInfo('hakone')">
-                    <img src="images/hakone.jpg" alt="하코네 아시 호수 유람선">
-                </div>
-                <div class="grid-item" onclick="showTouristInfo('owakudani')">
-                    <img src="images/owakudani.jpg" alt="오와쿠다니 계곡">
-                </div>
-                <div class="grid-item" onclick="showTouristInfo('sensoji')">
-                    <img src="images/sensoji.jpg" alt="아사쿠사 센소지">
-                </div>
-                <div class="grid-item" onclick="showTouristInfo('nakamise')">
-                    <img src="images/nakamise.jpg" alt="나카미세">
-                </div>
-                <div class="grid-item" onclick="showTouristInfo('shinsungsa')">
-                    <img src="images/shinsungsa.jpg" alt="신승사">
-                </div>
-            </div>
-        </div>
-
-        <!-- 관광지 설명 페이지 -->
-        <div id="touristInfoPage" class="page bg-white">
+        <!-- 호텔 페이지 -->
+        <div id="hotelPage" class="page bg-white">
             <div class="content-container p-8">
-                <h2 id="touristTitle" class="text-2xl font-bold mb-4"></h2>
-                <p id="touristDescription"></p>
-                <button onclick="showPage('touristPage')" class="mt-4 p-2 bg-blue-500 text-white">돌아가기</button>
+                <h2 class="text-2xl font-bold mb-4">호텔</h2>
+                <p>여기에 호텔 정보를 넣으세요.</p>
             </div>
         </div>
 
@@ -260,50 +238,7 @@
         });
 
         // 관광지 정보를 저장
-        const touristData = {
-            'akihabara': {
-                title: '아키하바라',
-                description: '아키하바라는 전자 제품과 오타쿠 문화의 중심지로 유명합니다...'
-            },
-            'disneyland': {
-                title: '디즈니랜드',
-                description: '도쿄 디즈니랜드는 가족과 함께 즐길 수 있는 테마파크입니다...'
-            },
-            'haneko': {
-                title: '하네코신사',
-                description: '하네코신사는...'
-            },
-            'hakone': {
-                title: '하코네 아시 호수 유람선',
-                description: '하코네 아시 호수에서 유람선을 타고 자연을 만끽할 수 있습니다...'
-            },
-            'owakudani': {
-                title: '오와쿠다니 계곡',
-                description: '활화산의 분기공에서 연기가 나는 오와쿠다니 계곡...'
-            },
-            'sensoji': {
-                title: '아사쿠사 센소지',
-                description: '센소지는 도쿄에서 가장 유명한 절입니다...'
-            },
-            'nakamise': {
-                title: '나카미세',
-                description: '나카미세는 상점가로...'
-            },
-            'shinsungsa': {
-                title: '신승사',
-                description: '신승사는...'
-            }
-        };
-
-        // 관광지 클릭 시 정보를 보여주는 함수
-        function showTouristInfo(touristKey) {
-            const info = touristData[touristKey];
-            document.getElementById('touristTitle').textContent = info.title;
-            document.getElementById('touristDescription').textContent = info.description;
-            showPage('touristInfoPage');
-        }
-
-        // 페이지 전환 함수
+                        // 페이지 전환 함수
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => {
