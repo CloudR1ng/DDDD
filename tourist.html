@@ -1,138 +1,144 @@
-  <!DOCTYPE html>
-  <html lang="ko">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
-      <title>관광지 - 대전대신고 1학년 수학여행</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-      <style>
-          body {
-              margin: 0;
-              padding: 0;
-              overflow-x: hidden;
-          }
-          .grid-container {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr); /* 2개의 열 */
-              grid-template-rows: repeat(4, 1fr); /* 4개의 행 */
-              gap: 10px;
-              width: 100vw;
-              height: 80vh;
-              margin: 0 auto;
-          }
-          .grid-item {
-              position: relative;
-              background-color: #ffffff;
-              border: 2px solid black;
-              cursor: pointer;
-              overflow: hidden;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-          }
-          .grid-item img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-          }
-          .header {
-              display: flex;
-              align-items: center;
-              padding: 0.5rem 1rem;
-              background-color: #4a4a4a;
-              position: relative;
-              flex-wrap: nowrap;
-              overflow: hidden;
-              justify-content: space-between;
-          }
-          .header-logo {
-              flex: 0 0 auto;
-              margin-right: 1rem;
-          }
-          .header-logo img {
-              height: 36px;
-              width: auto;
-          }
-          .header-title {
-              font-size: 1.1rem;
-              font-weight: bold;
-              color: white;
-              text-align: center;
-              flex-grow: 1;
-              white-space: nowrap;
-          }
-          #menuButton {
-              flex: 0 0 auto;
-              background-color: transparent;
-              border: none;
-              cursor: pointer;
-              padding-right: 1rem;
-          }
-          #menuButton img {
-              height: 24px;
-              width: 24px;
-              filter: invert(1); /* 흰색으로 표시되도록 필터 적용 */
-          }
-      </style>
-  </head>
-  <body class="bg-gray-100">
-      <header class="fixed w-full z-10">
-          <nav class="container mx-auto px-6 py-3 flex items-center header">
-              <!-- 로고 위치 조정 -->
-              <div class="header-logo">
-                  <img src="sym_mark.png" alt="Logo">
-              </div>
-              <div class="header-title">
-                  대전대신고등학교 1학년 수학여행
-              </div>
-              <!-- 오른쪽 메뉴 버튼에 이미지 추가 -->
-              <button id="menuButton" class="text-white focus:outline-none ml-0">
-                  <img src="menu.png" alt="Menu Icon">
-              </button>
-          </nav>
-      </header>
-  
-      <!-- 관광지 그리드 페이지 -->
-      <main class="main-content mt-16">
-          <div class="grid-container">
-              <!-- 각각의 관광지 그리드 아이템 -->
-              <div class="grid-item" onclick="location.href='tourist_akihabara.html'">
-                  <img src="images/akihabara.jpg" alt="아키하바라">
-              </div>
-              <div class="grid-item" onclick="location.href='tourist_disneyland.html'">
-                  <img src="images/disneyland.jpg" alt="디즈니랜드">
-              </div>
-              <div class="grid-item" onclick="location.href='tourist_haneko.html'">
-                  <img src="images/haneko.jpg" alt="하네코신사">
-              </div>
-              <div class="grid-item" onclick="location.href='tourist_hakone.html'">
-                  <img src="images/hakone.jpg" alt="하코네 아시 호수 유람선">
-              </div>
-              <div class="grid-item" onclick="location.href='tourist_owakudani.html'">
-                  <img src="images/owakudani.jpg" alt="오와쿠다니 계곡">
-              </div>
-              <div class="grid-item" onclick="location.href='tourist_sensoji.html'">
-                  <img src="images/sensoji.jpg" alt="아사쿠사 센소지">
-              </div>
-              <div class="grid-item" onclick="location.href='tourist_nakamise.html'">
-                  <img src="images/nakamise.jpg" alt="나카미세">
-              </div>
-              <div class="grid-item" onclick="location.href='tourist_shinsungsa.html'">
-                  <img src="images/shinsungsa.jpg" alt="신승사">
-              </div>
-          </div>
-      </main>
-  
-      <script>
-          // 메뉴 버튼 클릭 시 다른 페이지로 이동하는 함수
-          document.getElementById('menuButton').addEventListener('click', function () {
-              window.location.href = 'index.html'; // 홈 페이지로 이동
-          });;
-              window.location.href = destinations['akihabara'];
-          });
-              window.location.href = 'tourist_akihabara.html';
-          });
-          });
-      </script>
-  </body>
-  </html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <title>관광지 - 대전대신고 1학년 수학여행</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Style */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #4a4a4a;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            overflow: hidden;
+        }
+
+        .header-logo {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+        }
+
+        .header-logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .header-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+            white-space: nowrap;
+        }
+
+        #menuButton {
+            flex: 0 0 auto;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        #menuButton img {
+            height: 24px;
+            width: 24px;
+            filter: invert(1); /* 흰색으로 표시되도록 필터 적용 */
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2개의 열 */
+            grid-template-rows: repeat(4, 1fr); /* 4개의 행 */
+            gap: 10px;
+            width: 100vw;
+            height: 80vh;
+            margin: 0 auto;
+            margin-top: 60px; /* Adjust to avoid overlap with header */
+        }
+
+        .grid-item {
+            position: relative;
+            background-color: #ffffff;
+            border: 2px solid black;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="header">
+        <!-- 로고 위치 조정 -->
+        <div class="header-logo">
+            <img src="sym_mark.png" alt="Logo">
+        </div>
+        <div class="header-title">
+            대전대신고등학교 1학년 수학여행
+        </div>
+        <!-- 오른쪽 메뉴 버튼에 이미지 추가 -->
+        <button id="menuButton" class="text-white focus:outline-none ml-0">
+            <img src="menu.png" alt="Menu Icon">
+        </button>
+    </header>
+
+    <!-- 관광지 그리드 페이지 -->
+    <main class="main-content">
+        <div class="grid-container">
+            <!-- 각각의 관광지 그리드 아이템 -->
+            <div class="grid-item" onclick="location.href='tourist_akihabara.html'">
+                <img src="images/akihabara.jpg" alt="아키하바라">
+            </div>
+            <div class="grid-item" onclick="location.href='tourist_disneyland.html'">
+                <img src="images/disneyland.jpg" alt="디즈니랜드">
+            </div>
+            <div class="grid-item" onclick="location.href='tourist_haneko.html'">
+                <img src="images/haneko.jpg" alt="하네코신사">
+            </div>
+            <div class="grid-item" onclick="location.href='tourist_hakone.html'">
+                <img src="images/hakone.jpg" alt="하코네 아시 호수 유람선">
+            </div>
+            <div class="grid-item" onclick="location.href='tourist_owakudani.html'">
+                <img src="images/owakudani.jpg" alt="오와쿠다니 계곡">
+            </div>
+            <div class="grid-item" onclick="location.href='tourist_sensoji.html'">
+                <img src="images/sensoji.jpg" alt="아사쿠사 센소지">
+            </div>
+            <div class="grid-item" onclick="location.href='tourist_nakamise.html'">
+                <img src="images/nakamise.jpg" alt="나카미세">
+            </div>
+            <div class="grid-item" onclick="location.href='tourist_shinsungsa.html'">
+                <img src="images/shinsungsa.jpg" alt="신승사">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 메뉴 버튼 클릭 시 다른 페이지로 이동하는 함수
+        document.getElementById('menuButton').addEventListener('click', function () {
+            window.location.href = 'index.html'; // 홈 페이지로 이동
+        });
+    </script>
+</body>
+</html>
