@@ -45,25 +45,22 @@
         }
     </style>
 </head>
-    
 <body class="bg-gray-100">
     <!-- 헤더 시작 -->
     <header class="bg-blue-800 shadow-md fixed w-full z-10">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <nav class="container mx-auto px-6 py-3 flex justify-center items-center relative">
             <div class="flex items-center">
-                <img src="sym_mark.png">
+                <img src="/api/placeholder/50/50" alt="대전대신고 로고" class="h-10 w-10 mr-3">
                 <span class="font-bold text-xl text-white">대전대신고</span>
+                <button id="homeButton" class="text-white focus:outline-none ml-4">홈으로</button>
             </div>
-            <div class="flex items-center">
-                <button id="homeButton" class="text-white focus:outline-none mr-4">홈으로</button>
-                <button id="menuButton" class="text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+            <button id="menuButton" class="text-white focus:outline-none absolute right-6">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </nav>
     </header>
     <!-- 헤더 끝 -->
@@ -75,46 +72,52 @@
 
             <div
                 class="content-container px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+                <!-- 카드 아이템들 -->
+                <!-- 반 별 일정 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('schedulePage')">
                     <div class="relative">
-                        <img src="/api/placeholder/300/200" alt="반 별 일정" class="w-full h-40 object-cover">
+                        <img src="images/schedule.jpg" alt="반 별 일정" class="w-full h-40 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">반 별 일정</h2>
                         </div>
                     </div>
                 </div>
+                <!-- 아키하바라 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('akihabaraPage')">
                     <div class="relative">
-                        <img src="/api/placeholder/300/200" alt="아키하바라" class="w-full h-40 object-cover">
+                        <img src="images/akihabara.jpg" alt="아키하바라" class="w-full h-40 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">아키하바라</h2>
                         </div>
                     </div>
                 </div>
+                <!-- 디즈니랜드 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('disneylandPage')">
                     <div class="relative">
-                        <img src="/api/placeholder/300/200" alt="디즈니랜드" class="w-full h-40 object-cover">
+                        <img src="images/disneyland.jpg" alt="디즈니랜드" class="w-full h-40 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">디즈니랜드</h2>
                         </div>
                     </div>
                 </div>
+                <!-- 주의사항 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('cautionPage')">
                     <div class="relative">
-                        <img src="/api/placeholder/300/200" alt="주의사항" class="w-full h-40 object-cover">
+                        <img src="images/caution.jpg" alt="주의사항" class="w-full h-40 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">주의사항</h2>
                         </div>
                     </div>
                 </div>
+                <!-- 일본어 어휘 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
                     onclick="showPage('japanesePage')">
                     <div class="relative">
-                        <img src="/api/placeholder/300/200" alt="일본어 어휘" class="w-full h-40 object-cover">
+                        <img src="images/japanese.jpg" alt="일본어 어휘" class="w-full h-40 object-cover">
                         <div class="image-overlay">
                             <h2 class="font-semibold text-lg">일본어 어휘</h2>
                         </div>
