@@ -40,7 +40,13 @@
         .nav-item:hover {
             transform: scale(1.05);
         }
-        .content-container { width: 100%; max-width: 800px; margin: 0 auto; padding: 0; margin-top: 1rem; }
+        .content-container {
+            width: 100%;
+            max-width: 1200px; /* 최대 너비를 늘려 빈 공간을 줄임 */
+            margin: 0 auto;
+            padding: 0;
+            margin-top: 1rem;
+        }
         .image-overlay {
             position: absolute;
             top: 0;
@@ -78,7 +84,9 @@
             text-align: center;
             flex-grow: 1;
         }
-        .main-content { margin-top: 0; overflow-y: auto;
+        .main-content {
+            margin-top: 0;
+            overflow-y: auto;
             height: calc(100vh - 6rem);
             padding: 1rem;
             display: flex;
@@ -114,7 +122,7 @@
     <!-- 메인 콘텐츠 시작 -->
     <main class="main-content">
         <div id="homePage" class="page active">
-            <div class="content-container px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+            <div class="content-container px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <!-- 카드 아이템들 -->
                 <!-- 반 별 일정 -->
                 <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
