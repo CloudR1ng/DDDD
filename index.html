@@ -48,27 +48,23 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            display: flex;
+            display:GO flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
             text-align: center;
         }
-        .header { padding: 0; width: 100vw; background-color: #4a4a4a; /* 회색 배경 */
-        }
+        .header { padding: 0; width: 100vw; background-color: #4a4a4a; margin: 0; }
         .header-logo {
             display: flex;
             align-items: center;
         }
-        .header-logo img {
-            height: 48px;
-            width: auto;
-        }
+        .header-logo img { height: 48px; width: auto; margin: 0; }
         .header-logo span { margin-left: 0.2rem; }
         .header-title { text-align: left; flex-grow: 1;
         }
-        .main-content { padding: 0; display: flex;
+        .main-content { padding: 0; margin: 0; }display: flex;
             justify-content: center;
         }
     </style>
@@ -83,7 +79,7 @@
             </div>
             <div class="header-title font-bold text-white">2024학년도 대전대신고등학교 1학년 수학여행</div>
             <button id="menuButton" class="text-white focus:outline-none ml-0">
-                <img src="menu.png">
+                <img src="menu.png" alt="메뉴 버튼" class="h-8 w-8">
             </button>
         </nav>
     </header>
