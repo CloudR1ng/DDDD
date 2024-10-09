@@ -28,6 +28,7 @@
             transition: transform 0.3s ease;
             position: relative;
             height: 200px;
+            overflow: hidden;
         }
         .nav-item img {
             width: 100%;
@@ -75,6 +76,13 @@
             color: white;
             margin-left: 1rem;
         }
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-left: 1rem;
+            text-align: center;
+        }
         .main-content {
             margin-top: 6rem;
             overflow-y: auto;
@@ -89,7 +97,10 @@
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative header">
             <div class="header-logo">
                 <img src="sym_mark.png">
-                <span>대전대신고 1학년 수학여행</span>
+                <span>대전대신고</span>
+            </div>
+            <div class="header-title">
+                : 2024학년도 대전대신고등학교 1학년 수학여행
             </div>
             <button id="menuButton" class="text-white focus:outline-none">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
