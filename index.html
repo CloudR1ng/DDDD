@@ -37,11 +37,28 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
         }
 
         .section h2 {
             margin-bottom: 15px;
             font-size: 1.2em;
+        }
+
+        .diagonal-image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
@@ -50,13 +67,19 @@
 
     <div class="container">
         <div class="section">
-            <h2>분별 일정</h2>
-            <p>직접 해당 분별 일정을 설명하는 것을 추가해 보세요.</p>
+            <img src="path/to/your/image1.jpg" alt="분별 일정 이미지" class="diagonal-image">
+            <div class="content">
+                <h2>분별 일정</h2>
+                <p>직접 해당 분별 일정을 설명하는 것을 추가해 보세요.</p>
+            </div>
         </div>
 
         <div class="section">
-            <h2>관광지</h2>
-            <p>관광지의 질린 정보를 안내하는 내용을 열과하게 들어보세요.</p>
+            <img src="path/to/your/image2.jpg" alt="관광지 이미지" class="diagonal-image">
+            <div class="content">
+                <h2>관광지</h2>
+                <p>관광지의 질린 정보를 안내하는 내용을 열과하게 들어보세요.</p>
+            </div>
         </div>
     </div>
 </body>
