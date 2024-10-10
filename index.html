@@ -2,85 +2,270 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대신대신고</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <title>대전대신고 1학년 수학여행</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <style>
-        * {
+        :root {
+            --logo-font-size: 2rem;
+        }
+        body {
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
-
-        body {
-            background-color: #f5f5f5;
-            line-height: 1.6;
+        .page {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
-
-        header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.5em;
+        .page.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
+         .nav-item {
+            cursor: pointer;
+            transition: transform 0.3s ease, z-index 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 300px; /* 카드 높이 설정 */
+            padding: 0; /* 패딩 제거 */
+            margin: 0; /* 마진 제거 */
+            z-index: 1;
         }
-
-        .section h2 {
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-
-        .diagonal-image {
+        .nav-item img {
             width: 100%;
-            height: auto;
+            height: 100%; /* 이미지 높이를 부모 요소에 맞춤 */
+            object-fit: cover; /* 이미지가 카드 안을 꽉 채우도록 설정 */
+            object-position: center; /* 이미지의 중심을 맞춤 */
+        }
+        .nav-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            /* 화면 너비가 768px 이하인 경우 (모바일) */
+            .nav-item img {
+                height: 100%; /* 이미지 높이를 부모 요소에 맞춤 */
+                object-fit: cover; /* 이미지가 카드 안을 꽉 채우도록 설정 */
+                object-position: center; /* 이미지의 중심을 맞춤 */
+            }
+        }
+        .content-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .image-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
-            z-index: -1;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
         }
-
-        .content {
-            position: relative;
-            z-index: 1;
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #4a4a4a;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            margin: 0;
+        }
+        .header-logo {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+        }
+        .header-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .header-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+            white-space: nowrap;
+        }
+        .main-content {
+            margin-top: 0;
+            overflow-y: auto;
+            padding-top: 60px
+            height: calc(100vh - 6rem);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        #menuButton {
+            flex: 0 0 auto;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        #menuButton img {
+            height: 36px;
+            width: auto;
         }
     </style>
 </head>
-<body>
-    <header>대신대신고</header>
+<body class="bg-gray-100">
+    <!-- 헤더 시작 -->
+    <header class="fixed w-full z-10">
+        <nav class="container mx-auto px-6 py-3 flex items-center header">
+            <!-- 로고 위치 조정 -->
+            <div class="header-logo">
+                <img src="sym_mark.png" alt="Logo">
+            </div>
+            <div class="header-title">
+                대전대신고등학교 1학년 수학여행
+            </div>
+            <!-- 오른쪽 메뉴 버튼에 이미지 추가 -->
+            <button id="menuButton" class="text-white focus:outline-none ml-0">
+                <img src="menu.png" alt="Menu Icon">
+            </button>
+        </nav>
+    </header>
+    <!-- 헤더 끝 -->
 
-    <div class="container">
-        <div class="section">
-            <img src="path/to/your/image1.jpg" alt="분별 일정 이미지" class="diagonal-image">
-            <div class="content">
-                <h2>분별 일정</h2>
-                <p>직접 해당 분별 일정을 설명하는 것을 추가해 보세요.</p>
+<!-- 메인 콘텐츠 시작 -->
+    <main class="main-content">
+        <!-- 첫 페이지 (홈 페이지) -->
+        <div id="homePage" class="page active">
+            <div class="content-container px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- 반 별 일정 -->
+                <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
+                    onclick="showPage('schedulePage')">
+                    <div class="relative">
+                        <img src="DSHSBG.jpg">
+                        <div class="image-overlay">
+                            <h2 class="font-semibold text-lg">반 별 일정</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- 관광지 -->
+                <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
+                    onclick="location.href='tourist.html'">
+                    <div class="relative">
+                        <img src="TOURBG.jpg">
+                        <div class="image-overlay">
+                            <h2 class="font-semibold text-lg">관광지</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- 호텔 -->
+                <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
+                    onclick="showPage('hotelPage')">
+                    <div class="relative">
+                        <img src="HOTEL.jpg">
+                        <div class="image-overlay">
+                            <h2 class="font-semibold text-lg">호텔</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- 주의사항 -->
+                <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
+                    onclick="showPage('cautionPage')">
+                    <div class="relative">
+                        <img src="DANGEBG.jpg">
+                        <div class="image-overlay">
+                            <h2 class="font-semibold text-lg">주의사항</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- 일본어 어휘 -->
+                <div class="nav-item bg-white rounded-lg shadow-md overflow-hidden"
+                    onclick="showPage('japanesePage')">
+                    <div class="relative">
+                        <img src="JP.png">
+                        <div class="image-overlay">
+                            <h2 class="font-semibold text-lg">일본어 어휘</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="section">
-            <img src="path/to/your/image2.jpg" alt="관광지 이미지" class="diagonal-image">
-            <div class="content">
-                <h2>관광지</h2>
-                <p>관광지의 질린 정보를 안내하는 내용을 열과하게 들어보세요.</p>
+        <!-- 호텔 페이지 -->
+        <div id="hotelPage" class="page bg-white">
+            <div class="content-container p-8">
+                <h2 class="text-2xl font-bold mb-4">호텔</h2>
+                <p>여기에 호텔 정보를 넣으세요.</p>
             </div>
         </div>
-    </div>
+
+        <!-- 주의사항 페이지 -->
+        <div id="cautionPage" class="page bg-white">
+            <div class="content-container p-8">
+                <h2 class="text-2xl font-bold mb-4">주의사항</h2>
+                <p>여기에 주의사항 내용을 넣으세요.</p>
+            </div>
+        </div>
+
+        <!-- 일본어 어휘 페이지 -->
+        <div id="japanesePage" class="page bg-white">
+            <div class="content-container p-8">
+                <h2 class="text-2xl font-bold mb-4">일본어 어휘</h2>
+                <p>여기에 일본어 어휘 내용을 넣으세요.</p>
+            </div>
+        </div>
+    </main>
+    <!-- 메인 콘텐츠 끝 -->
+
+    <script>
+
+     function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        document.getElementById('menuButton').addEventListener('click', function () {
+            showPage('homePage');
+        });
+
+        // 관광지 정보를 저장
+                        // 페이지 전환 함수
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // 홈 페이지를 첫 번째로 표시
+        document.getElementById('homePage').classList.add('active');
+
+        // 클릭한 카드가 더 위에 나오게 설정하는 이벤트 리스너 추가
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // 모든 카드의 z-index를 초기화
+                navItems.forEach(nav => nav.style.zIndex = '1');
+                // 클릭한 카드의 z-index를 더 높게 설정
+                item.style.zIndex = '10';
+            });
+        });
+    </script>
 </body>
 </html>
